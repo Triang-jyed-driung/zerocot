@@ -11,7 +11,7 @@ THINK_START = '\x17'
 THINK_END = '\x19'
 OTHERS_PROB = 0.03
 
-output_file = 'E:/rwkvsub.jsonl'
+output_file = 'out.jsonl'
 
 def custom_split(text):
     # 定义正则表达式
@@ -48,7 +48,7 @@ def cot(text_list):
 def add_cot_for_text(s):
     return cot(custom_split(s))
 
-dataset = load_dataset('json', data_files="D:/zrc/finetune-1G-various/world_subsample.jsonl")
+dataset = load_dataset('json', data_files="some_file.jsonl")
 
 with open(output_file, 'a+', encoding='utf8') as fp:
     for i in range(50000):
